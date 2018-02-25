@@ -12,11 +12,15 @@ public class StatsdDemo {
     public static void main(String[] args) throws InterruptedException {
 
         StatsDClient client = new NonBlockingStatsDClient("druid-monitor", "status.dev.rack.zhihu.com", 8126);
-        long value = 1024*1024*1024*60l;
+        long bigValue = 1024*1024*1024*60l;
+        int smallValue = 50;
+        double doubleValue = 0.111;
 
         while (true) {
             System.out.println("start to send value..");
-            client.gauge("big-value-test.test-20170919", value++);      // 经验证，statsD 服务受到的确实是 long 型，数据没丢失。
+//            client.gauge("big-value-test.no-blank.test-20171029", smallValue++);      // 经验证，statsD 服务受到的确实是 long 型，数据没丢失。
+            client.gauge("big-value-test.G1 GC.test-20171029", smallValue++);      // 经验证，statsD 服务受到的确实是 long 型，数据没丢失。
+//            client.gauge("flout-value-test.test-20171029", doubleValue);
             Thread.sleep(3000);
         }
     }

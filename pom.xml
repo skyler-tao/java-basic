@@ -7,6 +7,18 @@
     <groupId>skyler.tao.test</groupId>
     <artifactId>java-basic</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.timgroup/java-statsd-client -->
@@ -20,6 +32,16 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zhihu.tracking</groupId>
+            <artifactId>protobuf-util</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.1</version>
         </dependency>
     </dependencies>
 
