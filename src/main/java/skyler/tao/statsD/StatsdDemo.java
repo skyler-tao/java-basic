@@ -11,7 +11,7 @@ import com.timgroup.statsd.StatsDClient;
 public class StatsdDemo {
     public static void main(String[] args) throws InterruptedException {
 
-        StatsDClient client = new NonBlockingStatsDClient("druid-monitor", "status.dev.rack.zhihu.com", 8126);
+        StatsDClient client = new NonBlockingStatsDClient("druid-monitor", "status.ip", 8126);
         long bigValue = 1024*1024*1024*60l;
         int smallValue = 50;
         double doubleValue = 0.111;
